@@ -1,0 +1,168 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+void llenar(int matriz[][5], int n);
+void mostrar(int matriz[][5], int n);
+void llenari(int matriz[][5], int n);
+void Dprin(int matriz[][5], int n);
+void DPdatosA(int matriz[][5],int n);
+void Dsec(int matriz[][5], int n);
+void DSdatosA(int matriz[][5],int n);
+void DPdatosAb(int matriz[][5],int n);
+void DSdatosAb(int matriz[][5],int n);
+void MatIP(int matriz[][5],int n);
+
+int main()
+{
+	int matriz[5][5];
+	llenar(matriz,5);
+	cout << endl;
+	cout << "Matriz Normal" << endl;
+	cout << endl;
+	mostrar(matriz,5);
+	llenari(matriz,5);
+	cout << endl;
+	cout << "Matriz Invertida" << endl;
+	cout << endl;
+	mostrar(matriz,5);
+	cout << endl;
+	cout << "Diagonal Principal" << endl;
+	cout << endl;
+	Dprin(matriz,5);
+	cout<< endl << endl;
+	cout << "Arriba de la diagonal principal" << endl;
+	cout << endl;
+	DPdatosA(matriz,5);
+	cout << endl << endl;
+	cout << "Diagonal secundaria" << endl;
+	cout << endl;
+	Dsec(matriz,5);
+	cout << endl << endl;
+	cout << "Arriba de la diagonal secundaria" <<endl;
+	cout << endl;
+	DSdatosA(matriz,5);
+	cout << endl << endl;
+	cout << "Abajo de la diagonal principal" << endl;
+	cout << endl;
+	DPdatosAb(matriz,5);
+	cout << endl << endl;
+	cout << "Abajo de la diagonal secundaria" << endl;
+	cout << endl;
+	DSdatosAb(matriz,5);
+	cout << endl << endl;
+	cout << "Diagonal principal datos invertidos"<< endl;
+	cout << endl;
+    matIP(matriz,5);
+
+	
+
+
+
+	cin.get();
+    return 0;
+}
+void llenar(int matriz[][5], int n)
+{
+    n=1;
+
+	for(int r=0; r<5; r++)
+	{
+
+		for(int c=0; c<5; c++)
+		{
+			matriz[r][c]=n++;
+		}
+	}
+}
+void mostrar(int matriz[][5], int n)
+{
+    	for (int r=0;r<5;r++)
+	{
+		for (int c=0;c<5;c++)
+			cout << matriz[r][c] <<"  ";
+			cout<<endl;
+	}
+}
+void llenari(int matriz[][5], int n)
+{
+    n=1;
+
+	for(int c=4; c>=0; c--)
+	{
+
+		for(int r=4; r>=0; r--)
+		{
+			matriz[r][c]=n++;
+		}
+	}
+}
+void Dprin(int matriz[][5], int n)
+{
+	for(int i=0; i<n; i++)
+	{
+		cout << matriz[i][i] << "  ";
+	}
+
+}
+void DPdatosA(int matriz[][5],int n)
+{
+     for(int r=0; r<=3; r++)
+	{
+		for(int c=r+1; c<5; c++)
+		{
+			cout << matriz[r][c] << "  ";
+		}
+	}
+}
+void Dsec(int matriz[][5], int n)
+{
+	int c=0;
+	for(int r= 4; r>=0; r--)
+	{
+			cout << matriz[r][c] << "   ";
+			c++;
+	}
+
+}
+void DSdatosA(int matriz[][5],int n)
+{
+     for(int r=0; r<n-1; r++)
+	{
+		for(int c=0; c<n-r-1; c++)
+		{
+			cout << matriz[r][c] << "  ";
+		}
+	}
+}
+void DPdatosAb(int matriz[][5],int n)
+{
+     for(int r=1; r<=4; r++)
+	{
+		for(int c=0; c<r; c++)
+		{
+			cout << matriz[r][c] << "  ";
+		}
+	}
+}
+void DSdatosAb(int matriz[][5],int n)
+{
+     for(int r=1; r<=4; r++)
+	{
+		for(int c=n-r; c<n; c++)
+		{
+			cout << matriz[r][c] << "  ";
+		}
+	}
+}
+void MatIP(int matriz[][5],int n)
+{
+	for (int r= n - 1; r >=0; r--)
+	{
+		for (int c = n -1; c >=0; c--)
+		cout<<matriz[r][c]<<" ";
+		cout<<endl;
+	}
+		
+		
+}
+
